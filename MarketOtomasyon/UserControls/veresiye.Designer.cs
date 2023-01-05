@@ -119,7 +119,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Image = global::MarketOtomasyon.Properties.Resources.save;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(236, 241);
+            this.button1.Location = new System.Drawing.Point(236, 246);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 42);
             this.button1.TabIndex = 6;
