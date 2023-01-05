@@ -16,5 +16,20 @@ namespace MarketOtomasyon.UserControls
         {
             InitializeComponent();
         }
+
+        private void button1_MouseEnter(object sender, EventArgs e)
+        {
+            button1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+        }
+
+        private void button1_MouseLeave(object sender, EventArgs e)
+        {
+            button1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+        }
+
+        private void button2_MouseEnter(object sender, EventArgs e)
+        {
+            button2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+        }
     }
 }
