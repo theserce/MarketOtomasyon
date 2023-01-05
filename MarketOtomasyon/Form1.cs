@@ -23,7 +23,7 @@ namespace MarketOtomasyon
             else if((textBox1.Text.Equals("admin")) && (textBox2.Text.Equals("1235")))
             {
                 Form f2= new Form2();
-                f2.Show();
+                f2.Show();               
             }
             else
             {
