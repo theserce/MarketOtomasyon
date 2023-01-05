@@ -2,6 +2,7 @@ namespace MarketOtomasyon
 {
     public partial class Form1 : Form
     {
+        Thread th;
         int mov;
         int movX;
         int movY;
@@ -9,7 +10,10 @@ namespace MarketOtomasyon
         {
             InitializeComponent();
         }
-
+        public void acForm(object obj)
+        {
+            Application.Run(new Form2());
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             if(textBox1.Text == "")
@@ -22,8 +26,10 @@ namespace MarketOtomasyon
             }
             else if((textBox1.Text.Equals("admin")) && (textBox2.Text.Equals("1235")))
             {
-                Form f2= new Form2();
-                f2.Show();               
+                this.Close();
+                th = new Thread(acForm);
+                th.SetApartmentState(ApartmentState.STA);
+                th.Start();
             }
             else
             {
