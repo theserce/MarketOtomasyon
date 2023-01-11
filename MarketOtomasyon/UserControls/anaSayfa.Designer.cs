@@ -178,6 +178,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "anaSayfa";
             this.Size = new System.Drawing.Size(1209, 544);
+            this.Load += new System.EventHandler(this.anaSayfa_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
