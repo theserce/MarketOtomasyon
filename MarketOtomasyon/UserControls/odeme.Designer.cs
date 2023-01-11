@@ -2,6 +2,7 @@
 {
     partial class odeme
     {
+
         /// <summary> 
         /// Required designer variable.
         /// </summary>
@@ -63,6 +64,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "odeme";
             this.Size = new System.Drawing.Size(1211, 546);
+            this.Load += new System.EventHandler(this.odeme_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

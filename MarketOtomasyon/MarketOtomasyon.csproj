@@ -19,7 +19,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.ReportingServices.ReportViewerControl.WinForms" Version="150.1537.0" />
+
   </ItemGroup>
 
   <ItemGroup>

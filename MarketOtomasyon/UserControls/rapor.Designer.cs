@@ -157,6 +157,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "rapor";
             this.Size = new System.Drawing.Size(1211, 546);
+            this.Load += new System.EventHandler(this.rapor_Load);
             this.panel1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
