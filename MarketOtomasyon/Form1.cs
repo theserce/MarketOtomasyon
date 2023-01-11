@@ -1,3 +1,7 @@
+using Microsoft.Data.SqlClient;
+using System.Data;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+
 namespace MarketOtomasyon
 {
     public partial class Form1 : Form
@@ -10,22 +14,37 @@ namespace MarketOtomasyon
         {
             InitializeComponent();
         }
+
+        SqlConnection con = new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=MarketOtomasyonDb;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         public void acForm(object obj)
         {
             Application.Run(new Form2());
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            if(textBox1.Text == "")
+            string kullanici_adi, sifre;
+            kullanici_adi= textBox1.Text;
+            sifre= textBox2.Text;
+
+            string querry = "SELECT * FROM SATICI WHERE KULLANICIADI = '" + textBox1.Text + "' AND SIFRE = '" + textBox2.Text + "'";
+            SqlDataAdapter sda = new SqlDataAdapter(querry, con);
+
+            DataTable dtable = new DataTable();
+            sda.Fill(dtable);
+
+            if (textBox1.Text == "")
             {
                 MessageBox.Show("Kullanýcý adýnýzý girin.");
             }
-            else if(textBox2.Text == "")
+            else if (textBox2.Text == "")
             {
                 MessageBox.Show("Þifrenizi girin.");
             }
-            else if((textBox1.Text.Equals("admin")) && (textBox2.Text.Equals("1235")))
+            else if (dtable.Rows.Count > 0)
             {
+                kullanici_adi = textBox1.Text;
+                sifre = textBox2.Text;
+
                 this.Close();
                 th = new Thread(acForm);
                 th.SetApartmentState(ApartmentState.STA);
