@@ -75,7 +75,8 @@ namespace MarketOtomasyon.UserControls
 
         private void stok_Load(object sender, EventArgs e)
         {
-            sda = new SqlDataAdapter(@"select * from STOKLAR", con);
+            // sda = new SqlDataAdapter(@"select * from STOKLAR", con);
+            sda = new SqlDataAdapter(@"select STOKLAR.STOK_ID, STOKLAR.URUN_ID, STOKLAR.STOK_ADEDI, STOKLAR.TEDARIKCI_ID, STOKLAR.GIRIS_TARIHI, URUNLER.IRSALIYE_NO from STOKLAR INNER JOIN URUNLER ON STOKLAR.URUN_ID = URUNLER.URUN_ID ORDER BY STOK_ID; ", con);
             dt = new DataTable();
             sda.Fill(dt);
             dataGridView1.DataSource = dt;
@@ -83,7 +84,7 @@ namespace MarketOtomasyon.UserControls
 
         public void kayitlari_getir()
         {
-            string getir = "Select * From STOKLAR";
+            string getir = "select STOKLAR.STOK_ID, STOKLAR.URUN_ID, STOKLAR.STOK_ADEDI, STOKLAR.TEDARIKCI_ID, STOKLAR.GIRIS_TARIHI, URUNLER.IRSALIYE_NO from STOKLAR INNER JOIN URUNLER ON STOKLAR.URUN_ID = URUNLER.URUN_ID ORDER BY STOK_ID;";
 
             SqlCommand komut = new SqlCommand(getir, con);
 
@@ -186,7 +187,71 @@ namespace MarketOtomasyon.UserControls
 
         }
 
-          
+        private void button3_Click(object sender, EventArgs e)
+        {
+            //var fileContent = string.Empty;
+            //var filePath = string.Empty;
 
+            //using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            //{
+            //    openFileDialog.InitialDirectory = "c:\\";
+            //    openFileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+            //    openFileDialog.FilterIndex = 2;
+            //    openFileDialog.RestoreDirectory = true;
+
+            //    if (openFileDialog.ShowDialog() == DialogResult.OK)
+            //    {
+
+            //        filePath = openFileDialog.FileName;
+
+            //        var fileStream = openFileDialog.OpenFile();
+
+            //        using (StreamReader reader = new StreamReader(fileStream))
+            //        {
+            //            string line;
+            //            while ((line = reader.ReadLine()) != null)
+            //            {
+            //                string[] items = line.Split(';');
+            //                int myInteger = int.Parse(items[1]);
+
+            //                string path = null;
+            //                foreach (string item in items)
+            //                {
+            //                    if (item.StartsWith("item\\") && item.EndsWith(".ddj"))
+            //                        path = item;
+            //                }
+            //            }
+            //            fileContent = reader.ReadToEnd();
+            //        }
+            //    }
+            //}
+
+            //MessageBox.Show(fileContent, "File Content at path: " + filePath, MessageBoxButtons.OK);
+
+            //----
+
+
+            System.IO.StreamReader file = new System.IO.StreamReader("D:\\test.txt");
+            string[] columnnames = file.ReadLine().Split(';');
+            DataTable dt = new DataTable();
+            foreach (string c in columnnames)
+            {
+                dt.Columns.Add(c);
+            }
+            string newline;
+            while ((newline = file.ReadLine()) != null)
+            {
+                DataRow dr = dt.NewRow();
+                string[] values = newline.Split(';');
+                for (int i = 0; i < values.Length; i++)
+                {
+                    dr[i] = values[i];
+                }
+                dt.Rows.Add(dr);
+            }
+            file.Close();
+            dataGridView1.DataSource = dt;
+        }
+    
     }
 }
