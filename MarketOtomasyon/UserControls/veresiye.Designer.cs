@@ -31,6 +31,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -40,7 +41,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -57,6 +57,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -87,6 +88,17 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(445, 546);
             this.panel2.TabIndex = 1;
+            // 
+            // button4
+            // 
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Location = new System.Drawing.Point(236, 451);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(100, 42);
+            this.button4.TabIndex = 9;
+            this.button4.Text = "Ödeme Yap";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -182,16 +194,6 @@
             this.label1.Size = new System.Drawing.Size(24, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "ID";
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(242, 451);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(100, 42);
-            this.button4.TabIndex = 9;
-            this.button4.Text = "Ödeme Yap";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // veresiye
             // 
