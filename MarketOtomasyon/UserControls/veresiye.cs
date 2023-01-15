@@ -158,5 +158,11 @@ namespace MarketOtomasyon.UserControls
             textBox3.Text = toplam_tutar;
 
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            veresiyeOdeme frm = new veresiyeOdeme();
+            frm.ShowDialog();
+        }
     }
 }

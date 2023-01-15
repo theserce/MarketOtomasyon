@@ -40,6 +40,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -71,6 +72,7 @@
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.button4);
             this.panel2.Controls.Add(this.button3);
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.button1);
@@ -159,9 +161,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(98, 190);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(97, 20);
+            this.label3.Size = new System.Drawing.Size(89, 20);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Toplam Tutar";
+            this.label3.Text = "Borç Miktarı";
             // 
             // label2
             // 
@@ -180,6 +182,16 @@
             this.label1.Size = new System.Drawing.Size(24, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "ID";
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(242, 451);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(100, 42);
+            this.button4.TabIndex = 9;
+            this.button4.Text = "Ödeme Yap";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // veresiye
             // 
@@ -212,5 +224,6 @@
         private Label label3;
         private Label label2;
         private Label label1;
+        private Button button4;
     }
 }
