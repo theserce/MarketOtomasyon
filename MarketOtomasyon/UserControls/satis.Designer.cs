@@ -60,10 +60,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -389,8 +389,27 @@
             this.panel2.Size = new System.Drawing.Size(766, 546);
             this.panel2.TabIndex = 1;
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(333, 265);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(93, 20);
+            this.label12.TabIndex = 3;
+            this.label12.Text = "SATIŞ DETAY";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(350, 7);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(46, 20);
+            this.label11.TabIndex = 2;
+            this.label11.Text = "SATIŞ";
+            // 
             // dataGridView2
             // 
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Location = new System.Drawing.Point(0, 290);
@@ -402,6 +421,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.GradientInactiveCaption;
@@ -413,24 +433,6 @@
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(350, 7);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(46, 20);
-            this.label11.TabIndex = 2;
-            this.label11.Text = "SATIŞ";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(333, 265);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(93, 20);
-            this.label12.TabIndex = 3;
-            this.label12.Text = "SATIŞ DETAY";
             // 
             // satis
             // 
