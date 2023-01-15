@@ -20,7 +20,7 @@ namespace MarketOtomasyon.UserControls
 
         SqlConnection con = new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=MarketOtomasyonDb;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         SqlDataAdapter sda;
-        DataTable dt;
+        DataTable dt, dt2;
         private void button1_MouseEnter(object sender, EventArgs e)
         {
             button1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
@@ -67,6 +67,11 @@ namespace MarketOtomasyon.UserControls
             dt = new DataTable();
             sda.Fill(dt);
             dataGridView1.DataSource = dt;
+
+            sda = new SqlDataAdapter(@"select * from SATIS_DETAY", con);
+            dt2 = new DataTable();
+            sda.Fill(dt2);
+            dataGridView2.DataSource = dt2;
         }
         public void kayitlari_getir()
         {
@@ -155,6 +160,45 @@ namespace MarketOtomasyon.UserControls
             textBox1.Text = satıs_id;
             textBox2.Text = satis_turu;
             textBox3.Text = musteri_id;
+
+        }
+        public void kayitlari_getir2()
+        {
+            string getir = "Select * From SATIS_DETAY";
+            SqlCommand komut = new SqlCommand(getir, con);
+            SqlDataAdapter ad = new SqlDataAdapter(komut);
+            DataTable dt2 = new DataTable();
+            ad.Fill(dt2);
+            dataGridView2.DataSource = dt2;
+            con.Close();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                    string kaydet = "SET IDENTITY_INSERT SATISLAR ON insert into SATIS_DETAY (SATIS_DETAY_ID, URUN_ID, URUN_ADI, SATIS_FIYATI, ADET, SATIS_ID) values (@p1, @p2, @p3, @p4, @p5, @p6 ) SET IDENTITY_INSERT SATISLAR OFF";
+                    SqlCommand komut = new SqlCommand(kaydet, con);
+                    komut.Parameters.AddWithValue("@p1", textBox4.Text);
+                    komut.Parameters.AddWithValue("@p2", textBox5.Text);
+                    komut.Parameters.AddWithValue("@p3", textBox6.Text);
+                    komut.Parameters.AddWithValue("@p4", textBox7.Text);
+                    komut.Parameters.AddWithValue("@p5", textBox8.Text);
+                    komut.Parameters.AddWithValue("@p6", textBox9.Text);
+                    komut.ExecuteNonQuery();
+
+                    MessageBox.Show("Kayıt Eklendi.");
+
+                    kayitlari_getir2();
+                }
+            }
+            catch (Exception hata)
+            {
+                MessageBox.Show("Bir hata var!" + hata.Message);
+            }
 
         }
     }

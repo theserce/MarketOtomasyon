@@ -30,15 +30,19 @@ namespace MarketOtomasyon.UserControls
             sda = new SqlDataAdapter(@"select (sum(SATIS_DETAY.SATIS_FIYATI * SATIS_DETAY.ADET)) - (SUM(BIRIM_GIRDI_FIYATI* STOK)) as 'kar' from URUNLER inner join SATIS_DETAY on URUNLER.URUN_ID = SATIS_DETAY.URUN_ID", con);
             dt2 = new DataTable();
             sda.Fill(dt2);
-            dataGridView2.DataSource = dt2;
+            dataGridView2.DataSource = dt2;            
             sda = new SqlDataAdapter(@"select URUN_ADI, STOK from URUNLER where STOK < STOK_ESIK", con);
             dt3 = new DataTable();
             sda.Fill(dt3);
-            dataGridView3.DataSource = dt3;
+            dataGridView3.DataSource = dt3;            
             sda = new SqlDataAdapter(@"select URUN_ADI, COUNT(ADET) from SATIS_DETAY group by URUN_ADI order by COUNT(ADET) desc", con);
             dt4 = new DataTable();
             sda.Fill(dt4);
             dataGridView4.DataSource = dt4;
+            if (dt3.Rows.Count > 0)
+            {
+                MessageBox.Show("Stoğu azalan ürünler var.");
+            }
         }
     }
 }
