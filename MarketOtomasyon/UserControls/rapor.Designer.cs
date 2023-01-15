@@ -55,6 +55,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1211, 546);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // tabControl1
             // 
@@ -115,6 +116,7 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Satış Trendi";
             this.tabPage3.UseVisualStyleBackColor = true;
+            this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
             // 
             // tabPage4
             // 

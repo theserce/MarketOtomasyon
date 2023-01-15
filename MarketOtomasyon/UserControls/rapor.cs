@@ -33,5 +33,15 @@ namespace MarketOtomasyon.UserControls
             dataGridView2.DataSource = dt;
 
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tabPage3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
